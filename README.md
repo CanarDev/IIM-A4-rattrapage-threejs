@@ -14,10 +14,6 @@ To try the visualizer, upload an audio file and enjoy !
 
 (You can also download the NCS song clicking on the download button.)
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgements
 
 - [Three.js](https://threejs.org/)
