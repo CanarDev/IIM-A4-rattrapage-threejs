@@ -1,0 +1,102 @@
+/* Ensure the body and html take up the full height of the viewport */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif; /* Default font family */
+}
+
+/* Style the canvas to take up the entire background */
+canvas.webgl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: -1; /* Ensures it is behind the controls */
+}
+
+/* Style for the controls section */
+.controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center items horizontally */
+    align-items: center;
+    gap: 10px;
+    z-index: 1; /* Ensure it is above the canvas */
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+/* Hide the file input and style its label */
+input.file {
+    display: none; /* Hide the input file */
+}
+
+/* Style buttons */
+.button, label.file {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #6a82fb, #fc5c7d); /* Gradient background */
+    border: none; /* Remove default border */
+    border-radius: 25px; /* More rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+    color: #fff; /* White text color */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    outline: none; /* Remove default outline */
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Additional button styling on hover */
+.button:hover, label.file:hover {
+    transform: scale(105%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+/* Style for the song title */
+#songTitle {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column; /* Stack controls vertically on smaller screens */
+        bottom: 10px;
+    }
+
+    button, label.file {
+        font-size: 14px; /* Slightly smaller text on smaller screens */
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+    }
+
+    #songTitle {
+        font-size: 14px; /* Smaller font size for song title */
+    }
+}
+
+@media (max-width: 400px) {
+    .button, label.file {
+        font-size: 12px; /* Even smaller text on very small screens */
+        padding: 6px 12px; /* Adjust padding for very small screens */
+    }
+
+    #songTitle {
+        font-size: 12px; /* Smaller font size for very small screens */
+    }
+}
